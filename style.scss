@@ -206,60 +206,87 @@ button,
   }
 }
 
-.section-title {
-  color: #1d3b66;
-  font-family: "Silka", sans-serif;
-  font-weight: 700;
+.bonus-section {
+  background-color: $section-background-light; // Cor de fundo da seção
+  padding: 60px 20px;
+  text-align: center;
 
-  .section-subtitle {
-    color: #0d73ea;
-    font-family: "Silka", sans-serif;
-    font-size: 18px;
+  .bonus-title {
+    font-size: 2rem;
+    color: $primary-color;
+    margin-bottom: 20px;
   }
 
-  /* Estilo para os módulos */
-  .module-box {
-    background: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    position: relative;
+  .bonus-description {
+    font-size: 1.125rem;
+    color: $text-secondary;
+    margin-bottom: 40px;
   }
 
-  .module-image {
-    width: 300px; /* Largura padrão */
-    height: 300px; /* Altura padrão */
-    object-fit: cover; /* Ajuste da imagem */
+  .bonus-cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
   }
 
-  .module-title {
-    color: #1d3b66;
-    font-weight: 600;
-    font-size: 18px;
+  .bonus-card {
+    background-color: $text-white;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    max-width: 300px;
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .bonus-label {
+      background-color: $primary-color;
+      color: $text-white;
+      padding: 5px 15px;
+      border-radius: 15px;
+      font-size: 0.875rem;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+
+    .bonus-image {
+      text-align: center;
+      margin-bottom: 15px;
+
+      img {
+        max-width: 100%;
+        border-radius: $border-radius;
+      }
+    }
+
+    .bonus-card-title {
+      font-size: 1.25rem;
+      color: $text-color;
+      margin-bottom: 10px;
+    }
+
+    .bonus-card-description {
+      font-size: 1rem;
+      color: $text-secondary;
+    }
   }
 
-  .module-description {
-    font-size: 14px;
-    color: #555555;
-  }
+  // Estilo responsivo para mobile
+  @include media-breakpoint-down(sm) {
+    .bonus-cards-container {
+      flex-direction: column;
+      align-items: center;
+    }
 
-  /* Estilo para o Bônus */
-  .bonus-badge {
-    position: absolute;
-    top: -15px;
-    left: 15px;
-    background-color: #0d73ea;
-    color: #ffffff;
-    padding: 5px 15px;
-    font-size: 14px;
-    border-radius: 20px;
-    font-weight: 600;
-    border: 2px solid #ffffff; /* Borda branca */
-  }
-
-  #custom-container {
-    max-width: 1200px;
-    margin: 0 auto;
+    .bonus-card {
+      max-width: 100%;
+      margin: 0 auto;
+    }
   }
 }
 
@@ -607,6 +634,7 @@ button,
   .guarantee-title {
     font-size: 1.75rem; // Tamanho maior para o título
     font-weight: bold;
+    text-align: center;
   }
 
   .guarantee-text {
