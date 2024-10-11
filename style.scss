@@ -206,6 +206,7 @@ button,
   }
 }
 
+// SEÇÃO CARROSEL MODULOS
 .module-carousel {
   display: flex;
   justify-content: center;
@@ -239,6 +240,61 @@ button,
       justify-content: center;
     }
   }
+}
+
+// Variáveis de cor para reutilização
+$primary-color: #1d3b66;
+$secondary-color: #0d73ea;
+$accent-color: #ea3b5a;
+$background-light: #f9f9f9;
+$text-color: #666;
+
+// Estilo para a seção de visão geral dos módulos
+.module-overview {
+  text-align: center;
+  margin: 50px 0;
+
+  .module-title {
+    font-size: 2.5rem;
+    color: $primary-color;
+    margin-bottom: 10px;
+  }
+
+  .module-subtitle {
+    font-size: 1.2rem;
+    color: #444;
+  }
+}
+
+// Estilo para os módulos, replicando a lógica do FAQ
+/* Estilo customizado para o Accordion */
+.accordion-button {
+  background-color: #0d73ea;
+  color: #fff;
+  font-weight: bold;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #ea3b5a;
+  color: #fff;
+}
+
+.accordion-body {
+  background-color: #f9f9f9;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.accordion-item {
+  border: none;
+}
+
+.accordion-item + .accordion-item {
+  margin-top: 10px;
+}
+
+h2.accordion-header {
+  font-size: 1.25rem;
 }
 
 // Seção - Bonus
