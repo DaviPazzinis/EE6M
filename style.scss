@@ -206,6 +206,42 @@ button,
   }
 }
 
+.module-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  overflow: hidden;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto; /* Centraliza o carrossel */
+  box-sizing: border-box;
+
+  .module-item {
+    flex: 0 1 300px;
+    margin: 10px;
+    min-width: 150px;
+  }
+
+  .module-image {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    max-height: 444px; /* Mantém a proporção de 1080x1600 */
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .module-carousel .slick-slide {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+// Seção - Bonus
 .bonus-section {
   background-color: $section-background-light; // Cor de fundo da seção
   padding: 60px 20px;

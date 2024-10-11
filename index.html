@@ -89,7 +89,32 @@
         </div>
     </section>
 
-
+    <div class="module-carousel">
+        <div class="module-item">
+            <img src="assets/modulos/47.png" alt="Módulo 1" class="module-image">
+        </div>
+        <div class="module-item">
+            <img src="assets/modulos/48.png" alt="Módulo 2" class="module-image">
+        </div>
+        <div class="module-item">
+            <img src="assets/modulos/49.png" alt="Módulo 3" class="module-image">
+        </div>
+        <div class="module-item">
+            <img src="assets/modulos/50.png" alt="Módulo 3" class="module-image">
+        </div>
+        <div class="module-item">
+            <img src="assets/modulos/51.png" alt="Módulo 3" class="module-image">
+        </div>
+        <div class="module-item">
+            <img src="assets/modulos/52.png" alt="Módulo 3" class="module-image">
+        </div>
+        <div class="module-item">
+            <img src="assets/modulos/53.png" alt="Módulo 3" class="module-image">
+        </div>
+        <div class="module-item">
+            <img src="assets/modulos/54.png" alt="Módulo 3" class="module-image">
+        </div>
+    </div>
 
     <!-- BONUS EXCLUSIVOS -->
     <section class="bonus-section">
@@ -611,6 +636,27 @@
                 ]
             });
         });
+    </script>
+
+    <script>
+        $('.module-carousel').slick({
+            slidesToShow: 3, // Mostra 3 imagens no desktop
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 1500,
+            infinite: true,
+            responsive: [
+                {
+                    breakpoint: 768, // No mobile
+                    settings: {
+                        slidesToShow: 1, // Mostra 1 imagem no mobile
+                        slidesToScroll: 1,
+                    }
+                }
+            ]
+        });
+
+
     </script>
 
 </body>
