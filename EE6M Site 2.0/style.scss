@@ -1,0 +1,771 @@
+* {
+  margin: 0%;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+@import "colors";
+
+// Definição de mixins para media queries personalizados
+@mixin media-breakpoint-down($breakpoint) {
+  @if $breakpoint == xs {
+    @media (max-width: 575.98px) {
+      @content;
+    }
+  } @else if $breakpoint == sm {
+    @media (max-width: 767.98px) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (max-width: 991.98px) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (max-width: 1199.98px) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (max-width: 1399.98px) {
+      @content;
+    }
+  }
+}
+
+@mixin media-breakpoint-up($breakpoint) {
+  @if $breakpoint == xs {
+    @media (min-width: 576px) {
+      @content;
+    }
+  } @else if $breakpoint == sm {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (min-width: 992px) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (min-width: 1400px) {
+      @content;
+    }
+  }
+}
+
+// Estilos da Primeira Sessão
+.hero-section {
+  background: $primary-color;
+  padding: 20px 0;
+  text-align: center;
+  color: $secondary-color;
+
+  .container {
+    max-width: 1200px; // Largura máxima para elementos internos
+    margin: 0 auto;
+    padding: 15px;
+  }
+
+  .logo {
+    max-width: 150px;
+    margin: 0 auto;
+  }
+
+  .hero-title {
+    color: $text-white;
+    font-size: 2.5rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.8rem;
+    }
+  }
+
+  .hero-subtitle {
+    color: $text-white;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+
+  .benefits-title {
+    color: $text-white;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .benefits-list {
+    text-align: left;
+    display: inline-block; // Centraliza a lista na tela
+    margin: 0 auto;
+    margin-left: 15px;
+
+    li {
+      color: $text-white;
+      font-size: 1.1rem;
+
+      i {
+        margin-right: 8px;
+        color: $accent-color;
+      }
+    }
+  }
+
+  .video-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: $box-shadow;
+    border-radius: $border-radius;
+    overflow: hidden;
+
+    iframe {
+      width: 100%;
+      height: 450px;
+
+      @media (max-width: 768px) {
+        height: 300px;
+      }
+    }
+  }
+
+  .cta-button {
+    background: linear-gradient(
+      45deg,
+      $accent-color,
+      darken($accent-color, 10%)
+    ); // Gradiente de amarelo
+    color: $secondary-color;
+    padding: 15px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    border-radius: $border-radius-button;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+
+    // Adicionando brilho
+    box-shadow: 0 0 20px rgba(255, 176, 30, 0.5);
+
+    &:hover {
+      background: linear-gradient(
+        45deg,
+        darken($accent-color, 10%),
+        $accent-color
+      ); // Inverte o gradiente no hover
+      box-shadow: 0 0 30px rgba(255, 176, 30, 0.7); // Aumenta o brilho no hover
+    }
+  }
+}
+
+// Ajustes de responsividade
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 5px 0;
+
+    .hero-title {
+      font-size: 1.6rem;
+    }
+
+    .hero-subtitle {
+      font-size: 0.9rem;
+    }
+
+    .video-wrapper {
+      iframe {
+        height: 200px;
+      }
+    }
+  }
+}
+
+// Seção - Você Não Estará Sozinha
+.section-clube {
+  background-color: #fff; // Cor de fundo clara para a seção
+  padding: 60px 0;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .text-section {
+    padding: 20px;
+    text-align: left;
+
+    .section-title {
+      font-weight: bold;
+      font-size: 2.5rem;
+      color: $secondary-color; // Utilizando a cor vermelha para o título
+      margin-bottom: 20px;
+    }
+
+    .section-description {
+      font-size: 1.125rem;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .cta-button {
+      background: linear-gradient(
+        45deg,
+        $accent-color,
+        darken($accent-color, 10%)
+      ); // Gradiente de amarelo
+      color: $text-white;
+      padding: 15px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: $border-radius-button;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+
+      // Adicionando brilho
+      box-shadow: 0 0 20px rgba(255, 176, 30, 0.5);
+
+      &:hover {
+        background: linear-gradient(
+          45deg,
+          darken($accent-color, 10%),
+          $accent-color
+        ); // Inverte o gradiente no hover
+        box-shadow: 0 0 30px rgba(255, 176, 30, 0.7); // Aumenta o brilho no hover
+      }
+    }
+  }
+
+  .club-image {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+// Estilo para a seção de comparação
+.comparison-section {
+    padding: 40px 20px; // Espaçamento interno para afastar das bordas do site
+    text-align: center;
+    background-color: $section-background-light;
+  
+    .comparison-title {
+      font-size: 2rem;
+      color: $primary-color;
+      margin-bottom: 30px;
+    }
+  
+    .comparison-container {
+      max-width: 800px; // Limitar a largura da tabela
+      margin: 0 auto;
+      overflow-x: auto; // Garantir que a tabela não quebre o layout
+    }
+  
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: $text-white;
+      box-shadow: $box-shadow;
+      border-radius: $border-radius;
+      overflow: hidden;
+  
+      th, td {
+        padding: 12px 15px;
+        border: 1px solid $section-border-color;
+        text-align: center;
+        font-size: 0.875rem; // Tamanho de fonte reduzido para caber melhor no mobile
+      }
+  
+      th {
+        background-color: $primary-color;
+        color: $text-white;
+        font-weight: bold;
+        font-size: 1rem; // Ajuste no tamanho da fonte para cabeçalhos
+      }
+  
+      td {
+        background-color: $background-color;
+        font-size: 0.875rem;
+        color: $text-color;
+      }
+  
+      .checkmark {
+        color: $success-color;
+        font-size: 1.25rem; // Tamanho de fonte menor para mobile
+      }
+  
+      .crossmark {
+        color: $danger-color;
+        font-size: 1.25rem; // Tamanho de fonte menor para mobile
+      }
+  
+      // Estilo responsivo para mobile
+      @include media-breakpoint-down(sm) {
+        th, td {
+          font-size: 0.75rem;
+          padding: 10px 8px;
+        }
+  
+        .checkmark, .crossmark {
+          font-size: 1rem; // Diminuir ainda mais no mobile
+        }
+      }
+    }
+  }
+  
+
+.reviews-carousel {
+  background-color: $background-color; // Cor de fundo da seção
+  padding: 30px 0; // Diminui o espaçamento superior e inferior
+
+  .swiper-container {
+    width: 100%;
+    max-width: 800px; // Largura máxima menor para desktop
+    height: 200px; // Define a altura máxima do carrossel
+    margin: 0 auto; // Centraliza o carrossel na página
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .review-image {
+    width: 100%; // Faz a imagem ocupar toda a largura do slide
+    max-width: 300px; // Limita o tamanho máximo da imagem
+    max-height: 180px; // Limita a altura máxima da imagem
+    border-radius: 10px; // Bordas arredondadas nas imagens
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Adiciona sombras suaves
+  }
+}
+
+// Variáveis de cores e tamanhos já pré-definidas anteriormente no projeto
+.price-benefits-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; // Alinha os itens para manter a mesma altura
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @include media-breakpoint-down(md) {
+    flex-direction: column; // No mobile, os cards serão empilhados
+    align-items: center; // Centraliza os elementos
+  }
+}
+
+.price-card {
+  width: 40%; // Mantém a largura do card
+  display: flex;
+  flex-direction: column; // Coloca os elementos em coluna
+  justify-content: center; // Centraliza os elementos verticalmente
+  align-items: center; // Centraliza os elementos horizontalmente
+  padding: 30px;
+  box-shadow: $box-shadow; // Utiliza a sombra pré-definida
+  border-radius: $border-radius; // Raio das bordas do card
+  background-color: $background-color;
+  margin-bottom: 0;
+  text-align: center; // Centraliza os textos do card
+
+  // Estilização do título do card de preço
+  h2 {
+    color: $text-color;
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 15px; // Espaçamento entre o título e o preço
+  }
+
+  // Estilização do valor de preço no card
+  h3 {
+    color: $danger-color; // Cor de destaque para o preço
+    font-size: 3rem; // Aumenta o tamanho da fonte para destaque
+    font-weight: bold;
+    margin: 0; // Remove margens padrão
+  }
+
+  // Estilização do parágrafo abaixo do valor
+  p {
+    font-size: 1.25rem;
+    color: $text-secondary;
+    margin-top: 10px; // Espaçamento entre o valor e o texto adicional
+    margin-bottom: 20px; // Espaçamento antes do botão
+  }
+
+  // Estilização do botão de CTA
+  .cta-button {
+    background: linear-gradient(
+      45deg,
+      $accent-color,
+      darken($accent-color, 10%)
+    ); // Gradiente de amarelo
+    color: $secondary-color;
+    padding: 15px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    border-radius: $border-radius-button;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+
+    // Adicionando brilho
+    box-shadow: 0 0 20px rgba(255, 176, 30, 0.5);
+
+    &:hover {
+      background: linear-gradient(
+        45deg,
+        darken($accent-color, 10%),
+        $accent-color
+      ); // Inverte o gradiente no hover
+      box-shadow: 0 0 30px rgba(255, 176, 30, 0.7); // Aumenta o brilho no hover
+    }
+  }
+
+  // Estilização dos ícones de pagamento abaixo do botão
+  .payment-icons {
+    display: flex;
+    justify-content: center; // Centraliza os ícones horizontalmente
+    align-items: center;
+    margin-top: 10px;
+
+    img {
+      width: 40px;
+      height: auto;
+      margin: 0 10px; // Espaçamento entre os ícones
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    width: 100%; // No mobile, ocupa 100% do container
+    margin-bottom: 20px; // Espaçamento inferior no mobile
+  }
+}
+
+.benefits-deliverables {
+  width: 55%; // Define a largura dos cards à direita
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include media-breakpoint-down(md) {
+    width: 100%; // No mobile, ocupa 100% da largura do container
+  }
+
+  .benefits-card,
+  .deliverables-card {
+    width: 100%;
+    padding: 20px;
+    box-shadow: $box-shadow; // Sombra dos cards
+    border-radius: $border-radius; // Borda arredondada dos cards
+    background-color: $background-color;
+    margin-bottom: 20px;
+
+    h3 {
+      font-size: 1.5rem;
+      color: $text-color;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        display: flex;
+        align-items: center;
+        font-size: 1rem;
+        margin-bottom: 10px;
+
+        i {
+          margin-right: 10px;
+          color: $primary-color;
+        }
+
+        &:hover {
+          color: darken($primary-color, 10%);
+        }
+      }
+    }
+  }
+
+  .deliverables-card {
+    margin-bottom: 0; // Remove a margem inferior do último card
+  }
+}
+
+.guarantee-section {
+  background-color: $secondary-color; // Fundo azul forte
+  color: $text-white; // Texto em branco para contraste
+  border-radius: $border-radius; // Bordas arredondadas para a seção
+
+  .guarantee-badge {
+    max-width: 180px;
+    margin: 0 auto; // Centralizar no mobile
+    border-radius: $border-radius; // Bordas arredondadas para o selo
+  }
+
+  .guarantee-title {
+    font-size: 1.75rem; // Tamanho maior para o título
+    font-weight: bold;
+  }
+
+  .guarantee-text {
+    font-size: 1rem;
+    line-height: 1.6; // Altura da linha para melhorar a leitura
+    text-align: left;
+
+    strong {
+      font-weight: bold; // Destacar partes importantes
+    }
+  }
+
+  // Ajustes para dispositivos móveis
+  @include media-breakpoint-down(md) {
+    .guarantee-text {
+      text-align: center; // Centralizar o texto no mobile
+    }
+  }
+}
+
+// Seção - PERGUNTAS FREQUENTES
+.faq-section {
+  background-color: $section-background-light; // Usando a cor de fundo definida nas variáveis
+  padding: 60px 0;
+
+  .faq-title {
+    color: $danger-color; // Usando a cor de destaque definida nas variáveis
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-family: $font-primary; // Fonte principal do projeto
+  }
+
+  .faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+
+    .faq-item {
+      margin-bottom: 15px;
+
+      .faq-question {
+        width: 100%;
+        background-color: $text-white;
+        border: 1px solid $section-border-color;
+        border-radius: $border-radius;
+        padding: 15px;
+        text-align: left;
+        font-size: 1.125rem;
+        color: $text-color;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+        box-shadow: $box-shadow;
+
+        &:hover {
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+          transform: translateY(-2px); // Leve elevação ao passar o mouse
+        }
+
+        .faq-icon {
+          font-size: 1.5rem;
+          color: $danger-color; // Cor do ícone baseada na variável
+          transition: transform 0.3s ease;
+        }
+      }
+
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 15px;
+        font-size: 1rem;
+        color: $text-secondary;
+        background-color: $text-white;
+        border-radius: $border-radius;
+        border-top: none;
+        transition: max-height 0.6s ease-in-out, padding 0.6s ease-in-out; // Animação mais fluida
+        line-height: 1.5; // Ajuste para espaçamento mais fluido
+      }
+
+      &.active {
+        .faq-answer {
+          max-height: 300px; // Altura máxima ajustada para mostrar a resposta
+          padding: 15px; // Espaçamento ao redor do conteúdo da resposta
+        }
+
+        .faq-icon {
+          transform: rotate(
+            180deg
+          ); // Gira a seta quando a resposta estiver ativa
+        }
+      }
+    }
+  }
+}
+
+.mentora-section {
+  background-color: $section-background-light; // Fundo claro para a seção
+  padding: 80px 0;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @include media-breakpoint-up(md) {
+      flex-direction: row; // Alterar para linha no desktop
+      text-align: left;
+    }
+  }
+
+  .mentora-image-container {
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 30px;
+    position: relative;
+
+    .mentora-image {
+      width: 100%;
+      height: auto;
+      border-radius: $border-radius; // Bordas arredondadas
+      box-shadow: $box-shadow; // Aplicando sombra leve
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05); // Efeito de zoom leve ao passar o mouse
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      margin-right: 50px; // Espaçamento lateral no desktop
+    }
+  }
+
+  .mentora-content {
+    max-width: 600px;
+
+    .mentora-title {
+      color: $text-color;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      font-family: $font-primary;
+    }
+
+    .mentora-text {
+      font-size: 1.125rem;
+      color: $text-secondary;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      font-family: $font-secondary;
+
+      strong {
+        color: $danger-color; // Destaque no texto
+        font-weight: 600;
+      }
+    }
+
+    .mentora-quote {
+      background-color: $section-background-dark;
+      padding: 15px 30px;
+      font-size: 1.25rem;
+      color: $primary-color;
+      font-style: italic;
+      border-radius: $border-radius;
+      margin-top: 30px;
+    }
+  }
+}
+
+// Seção - DUVIDAS E WHATSAPP
+.doubts-section {
+  background-color: $background-color;
+  padding: 50px 0;
+  text-align: center;
+
+  h2 {
+    font-family: $font-primary;
+    font-size: 2.5rem;
+    color: $text-color;
+    margin-bottom: 30px;
+  }
+
+  p {
+    font-family: $font-secondary;
+    font-size: 1.1rem;
+    color: $text-secondary;
+    margin-bottom: 20px;
+  }
+
+  .doubts-btn {
+    background: $success-color;
+    color: $text-white;
+    font-family: $font-primary;
+    font-size: 1.25rem;
+    padding: 15px 30px;
+    border-radius: $border-radius-button;
+    box-shadow: $box-shadow;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: $button-hover-color;
+    }
+
+    i {
+      margin-right: 10px;
+      font-size: 1.3rem;
+    }
+  }
+
+  // Responsividade
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    .doubts-btn {
+      font-size: 1.1rem;
+      padding: 12px 25px;
+    }
+  }
+}
+
+// Estilos para o rodapé
+.footer {
+  background-color: $secondary-color;
+  color: #fff; // Pode usar a variável $text-secondary se desejar
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 15px;
+    text-align: center;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .footer-text {
+      color: $text-white; // Cor de texto principal
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin: 5px 0;
+
+      a {
+        color: #ffb01e;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #ffb01e;
+        }
+      }
+    }
+  }
+}
