@@ -1,8 +1,29 @@
+@charset "UTF-8";
 * {
   margin: 0%;
   padding: 0;
   box-sizing: border-box;
   outline: none;
+  scroll-behavior: smooth;
+}
+
+/* Aplicando o mixin aos botões */
+button,
+.btn {
+  animation: float 3s ease-in-out infinite;
+  /* Animação com 3 segundos e 5px de movimento */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .hero-section {
@@ -103,9 +124,59 @@
     height: 200px;
   }
 }
+.section-title {
+  color: #1d3b66;
+  font-family: "Silka", sans-serif;
+  font-weight: 700;
+  /* Estilo para os módulos */
+  /* Estilo para o Bônus */
+}
+.section-title .section-subtitle {
+  color: #0d73ea;
+  font-family: "Silka", sans-serif;
+  font-size: 18px;
+}
+.section-title .module-box {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.section-title .module-image {
+  width: 300px; /* Largura padrão */
+  height: 300px; /* Altura padrão */
+  -o-object-fit: cover;
+     object-fit: cover; /* Ajuste da imagem */
+}
+.section-title .module-title {
+  color: #1d3b66;
+  font-weight: 600;
+  font-size: 18px;
+}
+.section-title .module-description {
+  font-size: 14px;
+  color: #555555;
+}
+.section-title .bonus-badge {
+  position: absolute;
+  top: -15px;
+  left: 15px;
+  background-color: #0d73ea;
+  color: #ffffff;
+  padding: 5px 15px;
+  font-size: 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  border: 2px solid #ffffff; /* Borda branca */
+}
+.section-title #custom-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .section-clube {
   background-color: #fff;
-  padding: 60px 0;
 }
 .section-clube .container {
   max-width: 1200px;
@@ -145,6 +216,32 @@
   height: auto;
 }
 
+/* Estilo básico do carrossel */
+.testimonial-carousel {
+  max-width: 1200px;
+  margin: 0 auto; /* Centraliza o carrossel */
+  padding: 20px;
+  box-sizing: border-box;
+  /* Estilo para as imagens do carrossel */
+  /* Ajuste de tamanho para os slides */
+  /* Centralização no mobile */
+}
+.testimonial-carousel .testimonial-carousel img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+.testimonial-carousel .slick-slide {
+  padding: 10px; /* Espaçamento entre os slides */
+}
+@media (max-width: 768px) {
+  .testimonial-carousel .testimonial-carousel .slick-slide {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 .comparison-section {
   padding: 40px 20px;
   text-align: center;
@@ -168,7 +265,8 @@
   border-radius: 8px;
   overflow: hidden;
 }
-.comparison-section .comparison-table th, .comparison-section .comparison-table td {
+.comparison-section .comparison-table th,
+.comparison-section .comparison-table td {
   padding: 12px 15px;
   border: 1px solid #e0e0e0;
   text-align: center;
@@ -179,6 +277,12 @@
   color: #fff;
   font-weight: bold;
   font-size: 1rem;
+}
+.comparison-section .comparison-table td:nth-child(2) {
+  background-color: rgba(234, 59, 90, 0.05);
+}
+.comparison-section .comparison-table td:nth-child(3) {
+  background-color: rgba(13, 115, 234, 0.05);
 }
 .comparison-section .comparison-table td {
   background-color: #f4f7fa;
@@ -194,36 +298,15 @@
   font-size: 1.25rem;
 }
 @media (max-width: 767.98px) {
-  .comparison-section .comparison-table th, .comparison-section .comparison-table td {
+  .comparison-section .comparison-table th,
+  .comparison-section .comparison-table td {
     font-size: 0.75rem;
     padding: 10px 8px;
   }
-  .comparison-section .comparison-table .checkmark, .comparison-section .comparison-table .crossmark {
+  .comparison-section .comparison-table .checkmark,
+  .comparison-section .comparison-table .crossmark {
     font-size: 1rem;
   }
-}
-
-.reviews-carousel {
-  background-color: #f4f7fa;
-  padding: 30px 0;
-}
-.reviews-carousel .swiper-container {
-  width: 100%;
-  max-width: 800px;
-  height: 200px;
-  margin: 0 auto;
-}
-.reviews-carousel .swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.reviews-carousel .review-image {
-  width: 100%;
-  max-width: 300px;
-  max-height: 180px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .price-benefits-container {

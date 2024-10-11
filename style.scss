@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   outline: none;
+  scroll-behavior: smooth;
 }
 @import "colors";
 
@@ -53,6 +54,31 @@
       @content;
     }
   }
+}
+
+@mixin float-animation($duration: 3s, $distance: 5px) {
+  animation: float $duration ease-in-out infinite;
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-$distance);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Aplicando o mixin aos botões */
+button,
+.btn {
+  @include float-animation(
+    3s,
+    5px
+  ); /* Animação com 3 segundos e 5px de movimento */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 // Estilos da Primeira Sessão
@@ -180,10 +206,66 @@
   }
 }
 
+.section-title {
+  color: #1d3b66;
+  font-family: "Silka", sans-serif;
+  font-weight: 700;
+
+  .section-subtitle {
+    color: #0d73ea;
+    font-family: "Silka", sans-serif;
+    font-size: 18px;
+  }
+
+  /* Estilo para os módulos */
+  .module-box {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+
+  .module-image {
+    width: 300px; /* Largura padrão */
+    height: 300px; /* Altura padrão */
+    object-fit: cover; /* Ajuste da imagem */
+  }
+
+  .module-title {
+    color: #1d3b66;
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  .module-description {
+    font-size: 14px;
+    color: #555555;
+  }
+
+  /* Estilo para o Bônus */
+  .bonus-badge {
+    position: absolute;
+    top: -15px;
+    left: 15px;
+    background-color: #0d73ea;
+    color: #ffffff;
+    padding: 5px 15px;
+    font-size: 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    border: 2px solid #ffffff; /* Borda branca */
+  }
+
+  #custom-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
 // Seção - Você Não Estará Sozinha
 .section-clube {
   background-color: #fff; // Cor de fundo clara para a seção
-  padding: 60px 0;
 
   .container {
     max-width: 1200px;
@@ -240,104 +322,124 @@
   }
 }
 
-// Estilo para a seção de comparação
-.comparison-section {
-    padding: 40px 20px; // Espaçamento interno para afastar das bordas do site
-    text-align: center;
-    background-color: $section-background-light;
-  
-    .comparison-title {
-      font-size: 2rem;
-      color: $primary-color;
-      margin-bottom: 30px;
-    }
-  
-    .comparison-container {
-      max-width: 800px; // Limitar a largura da tabela
-      margin: 0 auto;
-      overflow-x: auto; // Garantir que a tabela não quebre o layout
-    }
-  
-    .comparison-table {
-      width: 100%;
-      border-collapse: collapse;
-      background-color: $text-white;
-      box-shadow: $box-shadow;
-      border-radius: $border-radius;
-      overflow: hidden;
-  
-      th, td {
-        padding: 12px 15px;
-        border: 1px solid $section-border-color;
-        text-align: center;
-        font-size: 0.875rem; // Tamanho de fonte reduzido para caber melhor no mobile
-      }
-  
-      th {
-        background-color: $primary-color;
-        color: $text-white;
-        font-weight: bold;
-        font-size: 1rem; // Ajuste no tamanho da fonte para cabeçalhos
-      }
-  
-      td {
-        background-color: $background-color;
-        font-size: 0.875rem;
-        color: $text-color;
-      }
-  
-      .checkmark {
-        color: $success-color;
-        font-size: 1.25rem; // Tamanho de fonte menor para mobile
-      }
-  
-      .crossmark {
-        color: $danger-color;
-        font-size: 1.25rem; // Tamanho de fonte menor para mobile
-      }
-  
-      // Estilo responsivo para mobile
-      @include media-breakpoint-down(sm) {
-        th, td {
-          font-size: 0.75rem;
-          padding: 10px 8px;
-        }
-  
-        .checkmark, .crossmark {
-          font-size: 1rem; // Diminuir ainda mais no mobile
-        }
-      }
-    }
-  }
-  
+/* Estilo básico do carrossel */
+.testimonial-carousel {
+  max-width: 1200px;
+  margin: 0 auto; /* Centraliza o carrossel */
+  padding: 20px;
+  box-sizing: border-box;
 
-.reviews-carousel {
-  background-color: $background-color; // Cor de fundo da seção
-  padding: 30px 0; // Diminui o espaçamento superior e inferior
-
-  .swiper-container {
+  /* Estilo para as imagens do carrossel */
+  .testimonial-carousel img {
     width: 100%;
-    max-width: 800px; // Largura máxima menor para desktop
-    height: 200px; // Define a altura máxima do carrossel
-    margin: 0 auto; // Centraliza o carrossel na página
+    height: auto;
+    border-radius: 15px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
   }
 
-  .swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  /* Ajuste de tamanho para os slides */
+  .slick-slide {
+    padding: 10px; /* Espaçamento entre os slides */
   }
 
-  .review-image {
-    width: 100%; // Faz a imagem ocupar toda a largura do slide
-    max-width: 300px; // Limita o tamanho máximo da imagem
-    max-height: 180px; // Limita a altura máxima da imagem
-    border-radius: 10px; // Bordas arredondadas nas imagens
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Adiciona sombras suaves
+  /* Centralização no mobile */
+  @media (max-width: 768px) {
+    .testimonial-carousel .slick-slide {
+      display: flex;
+      justify-content: center;
+    }
   }
 }
 
-// Variáveis de cores e tamanhos já pré-definidas anteriormente no projeto
+// Estilo para a seção de comparação
+.comparison-section {
+  padding: 40px 20px; // Espaçamento interno para afastar das bordas do site
+  text-align: center;
+  background-color: $section-background-light;
+
+  .comparison-title {
+    font-size: 2rem;
+    color: $primary-color;
+    margin-bottom: 30px;
+  }
+
+  .comparison-container {
+    max-width: 800px; // Limitar a largura da tabela
+    margin: 0 auto;
+    overflow-x: auto; // Garantir que a tabela não quebre o layout
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: $text-white;
+    box-shadow: $box-shadow;
+    border-radius: $border-radius;
+    overflow: hidden;
+
+    th,
+    td {
+      padding: 12px 15px;
+      border: 1px solid $section-border-color;
+      text-align: center;
+      font-size: 0.875rem;
+    }
+
+    th {
+      background-color: $primary-color; // Mantém a cor de fundo padrão para o cabeçalho
+      color: $text-white;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    // Aplicar o tom específico para cada coluna, exceto o cabeçalho
+    td:nth-child(2) {
+      background-color: rgba(
+        $danger-color,
+        0.05
+      ); // Tom leve de vermelho nos itens da coluna "Outros Cursos"
+    }
+
+    td:nth-child(3) {
+      background-color: rgba(
+        $primary-color,
+        0.05
+      ); // Tom leve de azul nos itens da coluna "Embarque Esportivo 6M"
+    }
+
+    td {
+      background-color: $background-color;
+      font-size: 0.875rem;
+      color: $text-color;
+    }
+
+    .checkmark {
+      color: $success-color;
+      font-size: 1.25rem;
+    }
+
+    .crossmark {
+      color: $danger-color;
+      font-size: 1.25rem;
+    }
+
+    // Estilo responsivo para mobile
+    @include media-breakpoint-down(sm) {
+      th,
+      td {
+        font-size: 0.75rem;
+        padding: 10px 8px;
+      }
+
+      .checkmark,
+      .crossmark {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+// SEÇÃO - PREÇO, ENTREGAVEIS E BENEFICIOS
 .price-benefits-container {
   display: flex;
   justify-content: space-between;
@@ -352,6 +454,7 @@
   }
 }
 
+// SEÇÃO - PREÇO
 .price-card {
   width: 40%; // Mantém a largura do card
   display: flex;
@@ -436,6 +539,7 @@
   }
 }
 
+// SEÇÃO - ENTREGAVEIS E BENEFICIOS
 .benefits-deliverables {
   width: 55%; // Define a largura dos cards à direita
   display: flex;
@@ -488,6 +592,7 @@
   }
 }
 
+// SEÇÃO - 7 DIAS
 .guarantee-section {
   background-color: $secondary-color; // Fundo azul forte
   color: $text-white; // Texto em branco para contraste
@@ -522,7 +627,7 @@
   }
 }
 
-// Seção - PERGUNTAS FREQUENTES
+// SEÇÃO - PERGUNTAS FREQUENTES
 .faq-section {
   background-color: $section-background-light; // Usando a cor de fundo definida nas variáveis
   padding: 60px 0;
@@ -598,6 +703,7 @@
   }
 }
 
+// SEÇÃO - MENTORA
 .mentora-section {
   background-color: $section-background-light; // Fundo claro para a seção
   padding: 80px 0;
@@ -674,7 +780,7 @@
   }
 }
 
-// Seção - DUVIDAS E WHATSAPP
+// SEÇÃO - DUVIDAS E WHATSAPP
 .doubts-section {
   background-color: $background-color;
   padding: 50px 0;
@@ -733,7 +839,7 @@
   }
 }
 
-// Estilos para o rodapé
+// SEÇÃO - RODAPÉ
 .footer {
   background-color: $secondary-color;
   color: #fff; // Pode usar a variável $text-secondary se desejar
