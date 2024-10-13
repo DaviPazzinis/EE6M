@@ -1,0 +1,54 @@
+.hero-section {
+  background-color: #1d3b66;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+.hero-section .btn-warning {
+  background-color: #ffb01e;
+  color: #ffffff;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  animation: float 2s infinite alternate ease-in-out;
+}
+.hero-section .btn-warning:hover {
+  background-color: #ea9800;
+  box-shadow: 0 0 15px #ea9800;
+}
+.hero-section .animate-button {
+  animation: float 2s infinite alternate;
+}
+@keyframes float {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-5px);
+  }
+}
+.hero-section .ratio iframe {
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.icon-container {
+  max-width: 600px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.icon-container .icon-small {
+  font-size: 1.25rem;
+  color: #ffffff;
+}
+.icon-container p {
+  font-size: 0.8rem;
+  margin: 0;
+}
+.icon-container .row {
+  gap: 1rem;
+}
+.icon-container .col {
+  text-align: center;
+}/*# sourceMappingURL=hero.css.map */

@@ -1,0 +1,67 @@
+@import 'variables';
+
+.hero-section {
+  background-color: $blue-medium;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+
+  .btn-warning {
+    background-color: $yellow;
+    color: $white;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    animation: float 2s infinite alternate ease-in-out;
+
+    &:hover {
+      background-color: $orange-hover;
+      box-shadow: 0 0 15px $orange-hover;
+    }
+  }
+
+  .animate-button {
+    animation: float 2s infinite alternate;
+  }
+
+  @keyframes float {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-5px);
+    }
+  }
+
+  .ratio iframe {
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.icon-container {
+  max-width: 600px; // Define a largura máxima da div
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  .icon-small {
+    font-size: 1.25rem; // Reduz o tamanho do ícone
+    color: $white;
+  }
+
+  p {
+    font-size: 0.8rem; // Texto compacto
+    margin: 0;
+  }
+
+  .row {
+    gap: 1rem; // Ajusta o espaçamento entre colunas
+  }
+
+  .col {
+    text-align: center;
+  }
+}
+
+

@@ -1,0 +1,46 @@
+.faq-section {
+  background-color: #f5f7fa;
+  padding: 3rem 0;
+}
+.faq-section h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: #003366;
+}
+.faq-section .accordion-item {
+  border: none;
+  margin-bottom: 10px;
+}
+.faq-section .accordion-button {
+  background-color: #fff;
+  color: #1d3b66;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.faq-section .accordion-button:hover {
+  background-color: #eaf3ff;
+  transform: scale(1.02);
+}
+.faq-section .accordion-button:not(.collapsed) {
+  background-color: #003366;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.faq-section .accordion-body {
+  background-color: #fff;
+  padding: 20px;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+@media (max-width: 768px) {
+  .faq-section .accordion-button {
+    font-size: 1rem;
+    padding: 12px;
+  }
+}/*# sourceMappingURL=faq.css.map */

@@ -1,0 +1,53 @@
+.guarantee-section {
+    background-color: #1d3b66;
+    padding: 3rem 1rem;
+    border-radius: 12px;
+  
+    .guarantee-badge {
+      max-width: 150px;
+      animation: float 2s infinite ease-in-out alternate;
+    }
+  
+    .guarantee-text {
+      max-width: 600px;
+      margin-left: 2rem;
+  
+      h3 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #fff;
+      }
+  
+      p {
+        font-family: 'Roboto', sans-serif;
+        line-height: 1.6;
+        color: #e5e5e5;
+      }
+    }
+  
+    @keyframes float {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-5px);
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+      }
+  
+      .guarantee-badge {
+        margin-bottom: 1.5rem;
+      }
+  
+      .guarantee-text {
+        margin-left: 0;
+      }
+    }
+  }
+  

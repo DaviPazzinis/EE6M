@@ -1,0 +1,62 @@
+.mockup-section {
+    background-color: #f8f9fa;
+    padding: 4rem 0;
+  
+    h2 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      color: #003366;
+    }
+  
+    p {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1rem;
+      color: #555;
+    }
+  
+    .btn-warning {
+      background-color: #ffb01e;
+      color: #fff;
+      font-weight: bold;
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      transition: all 0.3s ease-in-out;
+      animation: float 2s infinite alternate ease-in-out;
+  
+      &:hover {
+        background-color: #ea9800;
+        box-shadow: 0 0 15px #ea9800;
+      }
+    }
+  
+    @keyframes float {
+      from {
+        transform: translateY(0px);
+      }
+      to {
+        transform: translateY(-5px);
+      }
+    }
+  
+    .mockup-image {
+      max-width: 100%;
+      height: auto;
+      transform-origin: center;
+      transition: transform 0.3s ease;
+      animation: tilt 5s infinite alternate ease-in-out;
+  
+      &:hover {
+        transform: scale(1.05); // Leve zoom ao hover
+      }
+    }
+  
+    @keyframes tilt {
+      0% {
+        transform: rotate(-10deg);
+      }
+      100% {
+        transform: rotate(10deg);
+      }
+    }
+  }
+  
