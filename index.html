@@ -10,6 +10,13 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css">
 
+    <!-- LightGallery CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/css/lightgallery.min.css" />
+
+    <!-- LightGallery JS -->
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/lightgallery.min.js"></script>
+
+
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto&display=swap" rel="stylesheet">
@@ -89,7 +96,6 @@
         <div class="container">
             <h2 class="text-center mb-4">Veja o que aconteceu com quem usou o método <br><span
                     class="highlight">EMBARQUE ESPORTIVO 6M</span></h2>
-            <p class="text-center mb-4">Esses são alguns depoimentos dos nossos atletas</p>
             <div class="testimonial-carousel">
                 <div><img src="assets/depoimentos/alunos/Depo MSG MAIRA.webp" alt="Depoimento 1"
                         class="testimonial-img"></div>
@@ -132,33 +138,82 @@
                 <div><img src="assets/depoimentos/alunos/IMG_2835_PNG.webp" alt="Depoimento 4" class="testimonial-img">
                 </div>
             </div>
+
         </div>
+        <p class="text-center mt-5">Esses são alguns depoimentos dos nossos atletas</p>
     </section>
 
-    <section class="gallery-section">
+    <section class="mosaic-gallery py-5">
         <div class="container">
-            <h2 class="text-center mb-4">Galeria de Momentos</h2>
-            <div class="row gallery-grid">
-                <!-- Imagens iniciais -->
-                <div class="col-md-4 col-6 mb-3"><img src="assets/depoimentos/alunos/Depo MSG MAIRA.webp" alt="Imagem 1" class="gallery-img"></div>
-                <div class="col-md-4 col-6 mb-3"><img src="assets/depoimentos/alunos/Depo MSG MAIRA.webp" alt="Imagem 1" class="gallery-img"></div>
-                <div class="col-md-4 col-6 mb-3"><img src="assets/depoimentos/alunos/Depo MSG MAIRA.webp" alt="Imagem 1" class="gallery-img"></div>
-                <div class="col-md-4 col-6 mb-3"><img src="assets/depoimentos/alunos/Depo MSG MAIRA.webp" alt="Imagem 1" class="gallery-img"></div>
-                <div class="col-md-4 col-6 mb-3"><img src="assets/depoimentos/alunos/Depo MSG MAIRA.webp" alt="Imagem 1" class="gallery-img"></div>
-                <div class="col-md-4 col-6 mb-3"><img src="assets/depoimentos/alunos/Depo MSG MAIRA.webp" alt="Imagem 1" class="gallery-img"></div>
-                <div class="col-md-4 col-6 mb-3"><img src="assets/depoimentos/alunos/Depo MSG MAIRA.webp" alt="Imagem 1" class="gallery-img"></div>
-                <div class="col-md-4 col-6 mb-3"><img src="assets/depoimentos/alunos/Depo MSG MAIRA.webp" alt="Imagem 1" class="gallery-img"></div>
-                <div class="col-md-4 col-6 mb-3"><img src="assets/depoimentos/alunos/Depo MSG MAIRA.webp" alt="Imagem 1" class="gallery-img"></div>
-                <div class="col-md-4 col-6 mb-3"><img src="assets/depoimentos/alunos/Depo MSG MAIRA.webp" alt="Imagem 1" class="gallery-img"></div>
-                <div class="col-md-4 col-6 mb-3"><img src="assets/depoimentos/alunos/Depo MSG MAIRA.webp" alt="Imagem 1" class="gallery-img"></div>
-                <div class="col-md-4 col-6 mb-3"><img src="assets/depoimentos/alunos/Depo MSG MAIRA.webp" alt="Imagem 1" class="gallery-img"></div>
-                <div class="col-md-4 col-6 mb-3"><img src="assets/depoimentos/alunos/Depo MSG MAIRA.webp" alt="Imagem 1" class="gallery-img"></div>
+            <div class="grid-container" id="gridContainer">
+                <div class="grid-item">
+                    <img src="assets/depoimentos/alunos/Depo MSG MAIRA.webp" alt="Imagem 1"
+                        class="img-fluid mosaic-img" />
+                </div>
+                <div class="grid-item">
+                    <img src="assets/depoimentos/alunos/IMG_2807_PNG.webp" alt="Imagem 2"
+                        class="img-fluid mosaic-img" />
+                </div>
+                <div class="grid-item">
+                    <img src="assets/depoimentos/alunos/IMG_2834_PNG.webp" alt="Imagem 3"
+                        class="img-fluid mosaic-img" />
+                </div>
+                <div class="grid-item">
+                    <img src="assets/depoimentos/alunos/IMG_2835_PNG.webp" alt="Imagem 4"
+                        class="img-fluid mosaic-img" />
+                </div>
+                <div class="grid-item">
+                    <img src="assets/depoimentos/alunos/IMG_8029_PNG.webp" alt="Imagem 5"
+                        class="img-fluid mosaic-img" />
+                </div>
+
+                <!-- Imagens escondidas inicialmente -->
+                <div class="grid-item hidden">
+                    <img src="assets/depoimentos/alunos/Depo MSG MAIRA.webp" alt="Imagem 6"
+                        class="img-fluid mosaic-img" />
+                </div>
+                <div class="grid-item hidden">
+                    <img src="assets/depoimentos/alunos/IMG_2807_PNG.webp" alt="Imagem 7"
+                        class="img-fluid mosaic-img" />
+                </div>
+                <div class="grid-item hidden">
+                    <img src="assets/depoimentos/alunos/IMG_2835_PNG.webp" alt="Imagem 8"
+                        class="img-fluid mosaic-img" />
+                </div>
+                <div class="grid-item hidden">
+                    <img src="assets/depoimentos/alunos/IMG_8029_PNG.webp" alt="Imagem 9"
+                        class="img-fluid mosaic-img" />
+                </div>
+                <div class="grid-item hidden">
+                    <img src="assets/depoimentos/alunos/PHOTO-2024-06-26-09-08-36.webp" alt="Imagem 10"
+                        class="img-fluid mosaic-img" />
+                </div>
             </div>
-            <div class="text-center">
+
+            <div class="text-center mt-4">
                 <button id="loadMore" class="btn btn-primary">Ver Mais</button>
             </div>
         </div>
     </section>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="modalImage" src="" alt="Imagem Grande" class="img-fluid" />
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+
+
 
 
     <section class="mockup-transparent-section">
@@ -677,6 +732,26 @@
                 ],
             });
         });
+
+
+
+    </script>
+
+    <script>
+        const loadMoreBtn = document.getElementById('loadMore');
+        const hiddenItems = document.querySelectorAll('.grid-item.hidden');
+
+        loadMoreBtn.addEventListener('click', () => {
+            hiddenItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.display = 'block';
+                    item.classList.remove('hidden');
+                }, index * 100); // Adiciona um leve atraso para cada imagem
+            });
+
+            loadMoreBtn.style.display = 'none'; // Esconde o botão após clicar
+        });
+
 
 
 
