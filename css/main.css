@@ -1,10 +1,58 @@
-@import url('bonus/bonus.css');
-@import url('hero/hero.css');
-@import url('modulos/modulos.css');
-@import url('mockup-nalone/mockup-nalone.css');
-@import url('comparison/comparison.css');
-@import url('guarantee/guarantee.css');
-@import url('pricing/pricing.css');
-@import url('faq/faq.css');
-@import url('doubts/doubts.css');
-@import url('footer/footer.css');
+@import url("bonus/bonus.css");
+@import url("hero/hero.css");
+@import url('depoimentos/depoimentos.css');
+@import url('grid/grid.css');
+@import url('pizza/pizza.css');
+@import url("modulos/modulos.css");
+@import url("mockup-nalone/mockup-nalone.css");
+@import url("comparison/comparison.css");
+@import url("guarantee/guarantee.css");
+@import url("pricing/pricing.css");
+@import url('google-review/google-review.scss');
+@import url('mentora/mentora.css');
+@import url("faq/faq.css");
+@import url("doubts/doubts.css");
+@import url("footer/footer.css");
+
+/* Impede overflow horizontal */
+html,
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ajusta margens internas das rows */
+.container > .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Garante que iframe não crie overflow */
+.ratio iframe {
+  width: 100%;
+  height: auto;
+}
+
+/* Previne que colunas ultrapassem a tela */
+.row > [class*="col-"] {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.ratio {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* Proporção 16:9 */
+  overflow: hidden;
+}
+
+.ratio iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}

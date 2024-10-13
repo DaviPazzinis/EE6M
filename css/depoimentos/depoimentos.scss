@@ -1,0 +1,38 @@
+.testimonial-carousel-section {
+    background-color: #00264d;
+    color: white;
+    padding: 60px 0;
+  
+    h2 {
+      font-size: 1.8rem;
+      color: #ffffff;
+      .highlight {
+        color: #007bff;
+      }
+    }
+  
+    p {
+      font-size: 1.1rem;
+      color: #d9d9d9;
+    }
+  
+    .testimonial-carousel {
+      display: flex;
+      justify-content: center;
+  
+      .testimonial-img {
+        width: 166px;
+        height: 333px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin: 0 5px; // Reduzido o espaçamento entre imagens
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+      }
+  
+      .testimonial-img:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+  

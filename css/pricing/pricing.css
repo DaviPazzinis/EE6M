@@ -2,7 +2,10 @@
 /* Sticky Card */
 #sticky-card {
   position: sticky;
-  top: 20px;
+  top: 20px; /* Distância do topo */
+  align-self: flex-start; /* Mantém alinhado ao início */
+  height: auto;
+  margin-bottom: 20px;
 }
 
 /* Animação do Botão */
@@ -29,4 +32,11 @@
   font-size: 1.5rem;
   margin-right: 10px;
   color: #1d3b66;
+}
+
+@media (max-width: 768px) {
+  #sticky-card {
+    position: static; /* Desativa sticky no mobile */
+    margin: 0 auto;
+  }
 }/*# sourceMappingURL=pricing.css.map */
