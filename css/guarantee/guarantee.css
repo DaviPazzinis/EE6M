@@ -4,7 +4,7 @@
   border-radius: 12px;
 }
 .guarantee-section .guarantee-badge {
-  max-width: 150px;
+  max-width: 250px;
   animation: float 2s infinite ease-in-out alternate;
 }
 .guarantee-section .guarantee-text {

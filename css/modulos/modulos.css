@@ -1,54 +1,59 @@
-.timeline-section {
-  background-color: #f8f9fa;
+@charset "UTF-8";
+.inside-ee6m {
+  background-color: #fff;
   padding: 3rem 0;
 }
-.timeline-section h2 {
+.inside-ee6m .container {
+  max-width: 800px; /* Define a largura máxima da seção */
+  margin: 0 auto; /* Centraliza horizontalmente */
+}
+.inside-ee6m h2 {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   color: #003366;
-  margin-bottom: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
 }
-.timeline-section .timeline {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.inside-ee6m .accordion-item {
+  border: none;
+  margin-bottom: 8px;
 }
-.timeline-section .timeline-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 2rem;
-  position: relative;
-}
-.timeline-section .timeline-dot {
-  width: 15px;
-  height: 15px;
-  background-color: #1d3b66;
-  border-radius: 50%;
-  margin-right: 1.5rem;
-}
-.timeline-section .timeline-content {
-  background-color: white;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
-}
-.timeline-section .timeline-content h4 {
-  margin-bottom: 0.5rem;
-  font-family: "Poppins", sans-serif;
+.inside-ee6m .accordion-button {
+  background-color: #fff;
   color: #1d3b66;
-}
-.timeline-section .timeline-content p {
+  font-weight: 600;
   font-family: "Roboto", sans-serif;
-  margin: 0;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.inside-ee6m .accordion-button:hover {
+  background-color: #f0f7ff;
+  transform: scale(1.03);
+}
+.inside-ee6m .accordion-button:not(.collapsed) {
+  background-color: #1d3b66;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.inside-ee6m .accordion-body {
+  background-color: #fff;
+  padding: 20px;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.inside-ee6m .hidden-items {
+  display: none; /* Itens escondidos inicialmente */
+}
+.inside-ee6m .show-more {
+  display: block;
 }
 @media (max-width: 768px) {
-  .timeline-section .timeline-item {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .timeline-section .timeline-dot {
-    margin-bottom: 1rem;
+  .inside-ee6m .accordion-button {
+    font-size: 1rem;
+    padding: 12px;
   }
 }/*# sourceMappingURL=modulos.css.map */

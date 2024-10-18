@@ -1,42 +1,167 @@
 @charset "UTF-8";
-/* Sticky Card */
-#sticky-card {
-  position: sticky;
-  top: 20px; /* Distância do topo */
-  align-self: flex-start; /* Mantém alinhado ao início */
-  height: auto;
+.unique-card {
+  display: flex;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.unique-card .price-section {
+  background-color: #007bff; /* Cor de destaque para a seção de preço */
+  color: #fff;
+  padding: 30px;
+  text-align: center;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Seção de Ícones de Pagamento */
+}
+.unique-card .price-section h2 {
+  font-size: 24px;
   margin-bottom: 20px;
 }
+.unique-card .price-section .price {
+  font-size: 28px;
+}
+.unique-card .price-section .price span {
+  font-size: 22px;
+}
+.unique-card .price-section .price strong {
+  font-size: 36px;
+  font-weight: bold;
+}
+.unique-card .price-section .price p {
+  font-size: 14px;
+}
+.unique-card .price-section .cta-button {
+  background: #ffcc00;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold; /* Deixar o texto mais grosso */
+  margin-top: 20px;
+  cursor: pointer;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  animation: float 2s infinite alternate ease-in-out;
+}
+.unique-card .price-section .cta-button:hover {
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+  animation: glow 1.5s infinite alternate; /* Efeito de brilho */
+}
+.unique-card .price-section .payment-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+.unique-card .price-section .payment-info img {
+  width: 20%; /* Ajustar para dividir igualmente entre os ícones */
+  max-width: 30px; /* Tamanho máximo */
+  filter: grayscale(100%);
+  height: auto; /* Manter a proporção */
+  filter: brightness(0) invert(1); /* Altera a cor do ícone para branco */
+}
+.unique-card .price-section .access-info {
+  font-size: 12px;
+  color: #ffffff;
+  margin-top: 15px;
+  line-height: 1.5;
+}
+.unique-card .divider {
+  width: 2px;
+  background-color: #e6e6e6;
+  margin: 20px 0;
+}
+.unique-card .info-section {
+  padding: 30px;
+  width: 65%;
+  background-color: #fff;
+}
+.unique-card .info-section .benefits-section h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #1c1c1c;
+}
+.unique-card .info-section .benefits-section ul {
+  list-style: none;
+  padding: 0;
+}
+.unique-card .info-section .benefits-section ul li {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #555;
+}
+.unique-card .info-section .benefits-section ul li .material-icons {
+  font-size: 26px;
+  margin-right: 10px;
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+.unique-card .info-section .benefits-section ul li .material-icons:hover {
+  color: #0056b3;
+}
+.unique-card .info-section .horizontal-divider {
+  width: 100%;
+  height: 2px;
+  background-color: #e6e6e6;
+  margin: 30px 0;
+}
+.unique-card .info-section .deliverables-section h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #1c1c1c;
+}
+.unique-card .info-section .deliverables-section ul {
+  list-style: none;
+  padding: 0;
+}
+.unique-card .info-section .deliverables-section ul li {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #555;
+}
+.unique-card .info-section .deliverables-section ul li .material-icons {
+  font-size: 26px;
+  margin-right: 10px;
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+.unique-card .info-section .deliverables-section ul li .material-icons:hover {
+  color: #0056b3;
+}
 
-/* Animação do Botão */
-@keyframes float {
+@keyframes glow {
   0% {
-    transform: translateY(0);
+    box-shadow: 0 0 5px #ffcc00;
   }
   100% {
-    transform: translateY(-5px);
+    box-shadow: 0 0 20px #ffcc00, 0 0 30px #ffcc00;
   }
 }
-.btn-warning {
-  animation: float 2s infinite ease-in-out alternate;
-  background-color: #ffb01e;
-  color: white;
-}
-.btn-warning:hover {
-  background-color: #ea9800;
-  box-shadow: 0 0 15px rgba(255, 176, 30, 0.5);
-}
-
-/* Ícones e Layout */
-.material-icons {
-  font-size: 1.5rem;
-  margin-right: 10px;
-  color: #1d3b66;
-}
-
 @media (max-width: 768px) {
-  #sticky-card {
-    position: static; /* Desativa sticky no mobile */
-    margin: 0 auto;
+  .unique-card {
+    flex-direction: column;
+  }
+  .unique-card .price-section,
+  .unique-card .info-section {
+    width: 100%;
+  }
+  .unique-card .divider {
+    display: none;
+  }
+  .unique-card .horizontal-divider {
+    margin-top: 10px;
   }
 }/*# sourceMappingURL=pricing.css.map */

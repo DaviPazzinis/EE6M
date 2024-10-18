@@ -7,9 +7,11 @@
 @import url("mockup-nalone/mockup-nalone.css");
 @import url("comparison/comparison.css");
 @import url("guarantee/guarantee.css");
+@import url('pravc/pravc.css');
 @import url("pricing/pricing.css");
 @import url('google-review/google-review.scss');
 @import url('mentora/mentora.css');
+@import url('entrevistas/entrevista.css');
 @import url("faq/faq.css");
 @import url("doubts/doubts.css");
 @import url("footer/footer.css");

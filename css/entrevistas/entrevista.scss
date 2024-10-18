@@ -1,0 +1,109 @@
+.entrevista {
+    background-color: #f9f9f9;
+    padding: 3rem 0;
+  
+    .mentor-title {
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      font-size: 2.2rem;
+      color: #003366;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+  
+    .mentor-subtitle {
+      font-family: "Roboto", sans-serif;
+      font-size: 1.25rem;
+      color: #0056b3;
+      text-align: center;
+      margin-bottom: 1rem;
+      position: relative;
+  
+      .fa-futbol-o {
+        margin-right: 10px;
+        color: #0056b3;
+      }
+  
+      .subtitle-line {
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, #007bff, #00aaff);
+        margin: 0.5rem auto;
+      }
+    }
+  
+    .mentor-text {
+      font-family: "Roboto", sans-serif;
+      font-size: 1rem;
+      color: #333;
+      line-height: 1.7;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+  
+    .mentor-image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1rem;
+  
+      .mentor-img {
+        width: 100%;
+        max-width: 450px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.4s ease;
+  
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  
+    
+  
+    @media (max-width: 768px) {
+      .mentor-title {
+        font-size: 1.8rem;
+      }
+  
+      .mentor-text {
+        font-size: 0.95rem;
+      }
+  
+      .mentor-image-container {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+  
+  .quote-decorated {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding: 1.5rem;
+    background-color: #fafafa;
+    color: #333;
+    border-left: 6px solid #ffb01e; /* Linha decorativa amarela */
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-style: italic;
+    margin-top: 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .quote-decorated::before {
+    content: '★'; /* Adiciona um ícone antes */
+    font-size: 2rem;
+    color: #ff5722;
+    position: absolute;
+    top: -20px;
+    left: -10px;
+  }
+  
+  .quote-decorated strong {
+    color: #007bff;
+    font-weight: bold;
+  }

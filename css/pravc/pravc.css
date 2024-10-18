@@ -1,0 +1,73 @@
+.section-ee6m {
+  background-color: #f7f9fc;
+  padding: 60px 0;
+}
+.section-ee6m .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.section-ee6m .section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #003366;
+}
+.section-ee6m .card-deck {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+@media (max-width: 1200px) {
+  .section-ee6m .card-deck {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .section-ee6m .card-deck {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 576px) {
+  .section-ee6m .card-deck {
+    grid-template-columns: 1fr;
+  }
+}
+.section-ee6m .card {
+  max-width: 250px;
+  margin: 0 auto;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.section-ee6m .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+.section-ee6m .card .card-icon {
+  font-size: 3.5rem;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+.section-ee6m .card .card-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #003366;
+  margin-bottom: 10px;
+}
+.section-ee6m .card .card-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.google-icon {
+  font-size: 3rem;
+  transform: scale(2);
+  margin-bottom: 15px;
+  color: #007bff;
+}/*# sourceMappingURL=pravc.css.map */

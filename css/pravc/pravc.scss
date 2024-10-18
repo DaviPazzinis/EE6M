@@ -1,0 +1,84 @@
+.section-ee6m {
+  background-color: #f7f9fc;
+  padding: 60px 0;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #003366;
+  }
+
+  .card-deck {
+    display: grid;
+    grid-template-columns: repeat(
+      5,
+      1fr
+    ); // Garante que os 5 itens fiquem em uma linha no desktop
+    gap: 20px;
+
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(
+        3,
+        1fr
+      ); // 3 itens por linha em telas menores
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr); // 2 itens por linha no tablet
+    }
+
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr; // 1 item por linha no celular
+    }
+  }
+
+  .card {
+    max-width: 250px;
+    margin: 0 auto;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-icon {
+      font-size: 3.5rem;
+      color: #007bff;
+      margin-bottom: 15px;
+    }
+
+    .card-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #003366;
+      margin-bottom: 10px;
+    }
+
+    .card-text {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #555;
+    }
+  }
+}
+
+.google-icon {
+  font-size: 3rem; // Mantém o tamanho padrão
+  transform: scale(2); // Aumenta o ícone em 3x
+  margin-bottom: 15px;
+  color: #007bff;
+}

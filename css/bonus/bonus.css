@@ -8,6 +8,8 @@
   color: #003366;
 }
 .bonus-section .card {
+  max-width: 280px;
+  margin: 0 auto;
   border: none;
   border-radius: 12px;
   overflow: hidden;
